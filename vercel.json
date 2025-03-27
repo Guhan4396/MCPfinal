@@ -1,7 +1,5 @@
 {
-  "buildCommand": "next build",
-  "devCommand": "next dev",
-  "installCommand": "curl -L https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh -o miniforge.sh && bash miniforge.sh -b -p $HOME/conda && export PATH=$HOME/conda/bin:$PATH && pip install -r requirements.txt && pnpm install",
+  "buildCommand": "pip install -r requirements.txt && next build",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "rewrites": [
@@ -15,9 +13,6 @@
       "memory": 1024,
       "maxDuration": 60
     }
-  },
-  "env": {
-    "PYTHON_VERSION": "3.9"
   }
 }
 
