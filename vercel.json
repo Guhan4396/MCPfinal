@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "pip install -r requirements.txt && next build",
-  "installCommand": "pnpm install",
-  "outputDirectory": ".next",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next",
+      "config": {
+        "buildCommand": "bash ./build.sh"
+      }
+    }
+  ],
   "routes": [
     {
       "src": "/api/calculate",
@@ -13,9 +18,6 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ],
-  "env": {
-    "PYTHON_VERSION": "3.9"
-  }
+  ]
 }
 
