@@ -1,23 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next",
-      "config": {
-        "buildCommand": "bash ./build.sh"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/calculate",
-      "dest": "/api/calculate"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ]
+  "buildCommand": "bash ./build.sh",
+  "installCommand": "echo 'Skipping default install'",
+  "framework": "nextjs",
+  "outputDirectory": ".next"
 }
 
