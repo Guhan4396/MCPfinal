@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "conda install -y pandas=1.5.3 numpy=1.24.3 scikit-learn=1.0.2 -c conda-forge && next build",
-  "installCommand": "pnpm install",
-  "outputDirectory": ".next"
+  "public": true,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "CONDA_INSTALL": "pandas=1.5.3 numpy=1.24.3 scikit-learn=1.0.2"
+  }
 }
 
