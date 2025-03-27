@@ -1,23 +1,24 @@
 {
-  "buildCommand": "pip install -r requirements.txt && next build",
-  "framework": "nextjs",
-  "outputDirectory": ".next",
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/api/calculate",
-      "destination": "/api/calculate"
+      "src": "requirements.txt",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
     }
   ],
-  "functions": {
-    "app/api/calculate/route.ts": {
-      "memory": 1024,
-      "maxDuration": 60
+  "routes": [
+    {
+      "src": "/api/calculate",
+      "dest": "/api/calculate"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
-  },
-  "build": {
-    "env": {
-      "PYTHON_VERSION": "3.9"
-    }
-  }
+  ]
 }
 
