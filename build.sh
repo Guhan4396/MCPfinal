@@ -5,9 +5,9 @@ set -e
 
 echo "Starting build process..."
 
-# Download Miniforge
+# Download Miniforge (using specific version)
 echo "Downloading Miniforge..."
-curl -fsSL "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh" > miniforge.sh || {
+curl -fsSL "https://github.com/conda-forge/miniforge/releases/download/23.11.0-0/Mambaforge-Linux-x86_64.sh" > miniforge.sh || {
     echo "Failed to download Miniforge"
     exit 1
 }
